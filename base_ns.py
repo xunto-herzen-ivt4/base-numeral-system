@@ -66,7 +66,7 @@ def __integer_convert_(integer_part, target_base):
 
 def __float_convert_(float_part, target_base, accuracy):
     float_converted = []
-    while float_part != 0 and len(float_converted) <= accuracy:
+    while float_part != 0 and len(float_converted) < accuracy:
         float_part *= target_base
         integer_part = int(float_part)
         float_converted.append(integer_part)
