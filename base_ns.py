@@ -15,22 +15,15 @@ class NumberBased:
         return symbol
 
     def __str__(self):
-        result = ''
-
-        for number in self.integer:
-            result += self.__symbol__(number)
-
-        result += '.'
-
-        for number in self.fraction:
-            result += self.__symbol__(number)
-
-        return result
+        return \
+            ''.join(self.__symbol__(number) for number in self.integer) + \
+            '.' + \
+            ''.join(self.__symbol__(number) for number in self.fraction)
 
 
 def convert(number: float, target_base: int, accuracy=6):
-    assert(number < 0, "Only positive number is accepted.")
-    assert(target_base < 0, "Only positive base is accepted.")
+    assert number > 0, "Only positive number is accepted."
+    assert target_base > 0, "Only positive base is accepted."
 
     converted = NumberBased(target_base)
 
