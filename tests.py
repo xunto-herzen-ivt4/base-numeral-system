@@ -1,10 +1,9 @@
 import base_ns
 
-for i in range(2, 16):
-    print("=== ns " + str(i) + "===")
-    for j in range(0, 20):
-        tmp = base_ns.convert(j, i)
-        print(j, "=>", tmp)
-        print(tmp, "=>", base_ns.convert_to_dec(tmp, i))
+for base in range(2, 20, 5):
+    for number in range(1, 100, 15):
+        number /= 10
+        converted = base_ns.convert(number, base)
+        print(number, "in", base,  "==", converted)
+        print(converted, "=>", base_ns.convert_to_dec(converted))
         print("\n")
-
