@@ -17,13 +17,13 @@ class NumberBased:
     def __str__(self):
         result = ''
 
-        for nunber in self.integer:
-            result += self.__symbol__(nunber)
+        for number in self.integer:
+            result += self.__symbol__(number)
 
         result += '.'
 
-        for nunber in self.fraction:
-            result += self.__symbol__(nunber)
+        for number in self.fraction:
+            result += self.__symbol__(number)
 
         return result
 
