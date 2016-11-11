@@ -22,8 +22,8 @@ class NumberBased:
 
 
 def convert(number: float, target_base: int, accuracy=6):
-    assert number > 0, "Only positive number is accepted."
-    assert target_base > 0, "Only positive base is accepted."
+    assert number >= 0, "Only positive number is accepted."
+    assert target_base >= 0, "Only positive base is accepted."
 
     converted = NumberBased(target_base)
 
